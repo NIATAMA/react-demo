@@ -17,7 +17,8 @@ export default class Shop extends React.Component {
     }
 
     state = {
-        goodList: []
+        goodList: [],
+        listLoading: false
     }
 
     componentDidMount() {
@@ -33,12 +34,14 @@ export default class Shop extends React.Component {
      * 获取商品列表
      */
     getGoodList = async () => {
+        this.setState({ listLoading: true })
         let res = null
         const { goodList } = this.props
         if (!goodList.length) {
             res = (await getShopList()).data
             this.props.addToGoodList(res)
         }
+        this.setState({ listLoading: false })
     }
 
     /**
@@ -69,6 +72,7 @@ export default class Shop extends React.Component {
                 <List
                     itemLayout="horizontal"
                     size="default"
+                    loading={this.state.listLoading}
                     dataSource={this.props.goodList}
                     renderItem={renderItem}
                 />
