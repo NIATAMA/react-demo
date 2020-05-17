@@ -12,7 +12,7 @@ import 'antd/dist/antd.min.css'
 import { ConfigProvider } from 'antd'
 import zhcn from 'antd/es/locale/zh_CN'
 // 路由
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 // redux
 import { store } from './store/index'
 import { Provider } from 'react-redux'
@@ -21,11 +21,11 @@ import './config'
 
 ReactDOM.render(
   <Provider store={store} >
-    <BrowserRouter>
+    <HashRouter>
       <ConfigProvider locale={zhcn} >
         <App />
       </ConfigProvider>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
   ,
   document.getElementById('root')
