@@ -1,0 +1,5 @@
+export const TYPE_1 = 'TYPE_1'
+export const ADDTOCART = 'ADD_TO_CART'
+export const ADDTOLIST = 'ADD_TO_LIST'
+export const REMOVEFROMCART = 'REMOVE_GOOD_FROM_CART'
+export const CARTPURCHASE = 'CART_PURCHASE'
